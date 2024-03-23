@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Extract the version of scarb from Cargo.toml used by dojo
 scarb_dependence=$(grep 'scarb =' Cargo.toml)
