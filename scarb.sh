@@ -16,4 +16,6 @@ if [ "$local_scarb_version" \< "$dojo_scarb_version" ]; then
     else
         echo "Skipping scarb installation."
     fi
+else 
+    echo $(scarb --version)
 fi
