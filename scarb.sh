@@ -9,10 +9,9 @@ local_scarb_version=$(echo $(scarb --version) | grep -oP '\b\d+\.\d+\.\d+\b' | h
 
 ## Check if the local scarb version is older than the dojo scarb version
 if [ "$local_scarb_version" \< "$dojo_scarb_version" ]; then
-    read -p "Do you want to install scarb version $dojo_scarb_version locally? (y/n): " install_choice
+    read -p "Do you want to install the latest scarb version locally? (y/n): " install_choice
     if [ "$install_choice" = "y" ]; then
-        echo "Installing scarb $dojo_scarb_version"
-        curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v $dojo_scarb_version
+        curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh 
     else
         echo "Skipping scarb installation."
     fi
